@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Habit extends Component {
+  state = {
+    count: 0,
+  };
+
   handleIncreament = () => {
     this.setState({ count: this.state.count + 1 });
   };
@@ -16,11 +20,11 @@ class Habit extends Component {
 
   render() {
     console.log(this.props.Habit);
-    const { name, count } = this.props.habit;
+    const habitName = this.props.habit.name;
     return (
       <li className="habit">
-        <span className="habit-name">{name}</span>
-        <span className="habit-count">{count}</span>
+        <span className="habit-name">{habitName}</span>
+        <span className="habit-count">{this.state.count}</span>
         <button
           className="habit-button habit-increase"
           onClick={this.handleIncreament}

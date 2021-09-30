@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Habit extends Component {
+  state = {
+    count: 0,
+  };
+
   handleIncreament = () => {
     this.setState({ count: this.state.count + 1 });
   };

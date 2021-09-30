@@ -1,5 +1,5 @@
 import "./App.css";
-import Habits from "./components/habits";
+import Habit from "./components/habit";
 
 function App() {
   return <Habits />;
