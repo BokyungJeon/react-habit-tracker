@@ -38,22 +38,20 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <Navbar
-          totalCount={this.state.habits.filter((item) => item.count > 0).length}
-        />
+      <div>
+        <Navbar />
         <form className="add-form">
           <input type="text" className="add-input" />
           <button className="add-button">Add</button>
         </form>
         <Habits
           habits={this.state.habits}
-          onIncreament={this.handleIncreament}
-          onDecreament={this.handleDecreament}
+          onIncrement={this.handleIncreament}
+          onDecrement={this.handleDecreament}
           onDelete={this.handleDelete}
         />
         ;<button className="add-button">Reset All</button>
-      </>
+      </div>
     );
   }
 }

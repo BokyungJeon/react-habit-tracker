@@ -48,8 +48,8 @@ class App extends Component {
         </form>
         <Habits
           habits={this.state.habits}
-          onIncreament={this.handleIncreament}
-          onDecreament={this.handleDecreament}
+          onIncrement={this.handleIncreament}
+          onDecrement={this.handleDecreament}
           onDelete={this.handleDelete}
         />
         ;<button className="add-button">Reset All</button>

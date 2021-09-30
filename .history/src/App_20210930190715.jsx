@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Habits from "./components/habits";
-import Navbar from "./components/navbar";
 
 class App extends Component {
   state = {
@@ -38,22 +37,25 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <Navbar
-          totalCount={this.state.habits.filter((item) => item.count > 0).length}
-        />
+      <div>
+        <header className="navbar">
+          <i className="navber-logo"></i>
+          <span>Habit Tracker</span>
+          <span className="navbar-count">0</span>
+        </header>
         <form className="add-form">
           <input type="text" className="add-input" />
           <button className="add-button">Add</button>
         </form>
         <Habits
-          habits={this.state.habits}
-          onIncreament={this.handleIncreament}
-          onDecreament={this.handleDecreament}
+          key={habit.id}
+          habits={habits}
+          onIncrement={this.handleIncreament}
+          onDecrement={this.handleDecreament}
           onDelete={this.handleDelete}
         />
         ;<button className="add-button">Reset All</button>
-      </>
+      </div>
     );
   }
 }
