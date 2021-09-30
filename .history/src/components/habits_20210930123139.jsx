@@ -13,7 +13,7 @@ class habits extends Component {
     return (
       <ul>
         {this.state.habits.map((habit) => (
-          <Habit key={habit.id} habit={habit} />
+          <Habit habit={habit} />
         ))}
       </ul>
     );
