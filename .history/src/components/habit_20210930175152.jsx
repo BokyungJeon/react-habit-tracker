@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class Habit extends Component {
   handleIncreament = () => {
+    console.log(event);
     this.props.onIncreament(this.props.habit);
   };
 

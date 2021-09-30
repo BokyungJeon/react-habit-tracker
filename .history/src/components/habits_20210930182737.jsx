@@ -26,7 +26,7 @@ class habits extends Component {
     console.log(`handleDecrement ${habit.name}`);
     const habits = [...this.state.habits];
     const index = habits.indexOf(habit);
-    const count = habits[index].count - 1;
+    const count = habit[index].count - 1;
     habits[index].count = count < 0 ? 0 : count; // 좋지않은 코드
     this.setState({ habits });
   };
@@ -47,7 +47,7 @@ class habits extends Component {
             key={habit.id}
             habit={habit}
             onIncreament={this.handleIncreament}
-            onDecreament={this.handleDecreament}
+            onDecreament={this.handleIncreament}
             onDelete={this.handleDelete}
           />
         ))}

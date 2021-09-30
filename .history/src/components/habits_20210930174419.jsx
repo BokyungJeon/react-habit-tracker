@@ -24,17 +24,16 @@ class habits extends Component {
 
   handleDecreament = (habit) => {
     console.log(`handleDecrement ${habit.name}`);
-    const habits = [...this.state.habits];
+    habits = [...this.state.habits];
     const index = habits.indexOf(habit);
-    const count = habits[index].count - 1;
+    const count = habit[index].count - 1;
     habits[index].count = count < 0 ? 0 : count; // 좋지않은 코드
     this.setState({ habits });
   };
 
-  handleDelete = (habit) => {
+  handleIncreament = (habit) => {
     console.log(`handleDelete ${habit.name}`);
-    const habits = this.state.habits.filter((item) => item.id !== habit.id);
-    this.setState({ habits });
+    habits = [...this.state.habits];
   };
 
   render() {
@@ -46,8 +45,8 @@ class habits extends Component {
           <Habit
             key={habit.id}
             habit={habit}
-            onIncreament={this.handleIncreament}
-            onDecreament={this.handleDecreament}
+            onIncrement={this.handleIncreament}
+            onDecrement={this.handleIncreament}
             onDelete={this.handleDelete}
           />
         ))}
