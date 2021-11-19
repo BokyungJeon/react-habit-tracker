@@ -14,12 +14,12 @@ class Habit extends PureComponent {
     // 정리하고 리소스 지우기
   }
 
-  handleIncreament = () => {
-    this.props.onIncreament(this.props.habit);
+  handleIncrement = () => {
+    this.props.onIncrement(this.props.habit);
   };
 
-  handleDecreament = () => {
-    this.props.onDecreament(this.props.habit);
+  handleDecrement = () => {
+    this.props.onDecrement(this.props.habit);
   };
 
   handleDelete = () => {
@@ -34,13 +34,13 @@ class Habit extends PureComponent {
         <span className="habit-count">{count}</span>
         <button
           className="habit-button habit-increase"
-          onClick={this.handleIncreament}
+          onClick={this.handleIncrement}
         >
           <i className="fas fa-plus-square"></i>
         </button>
         <button
           className="habit-button habit-decrease"
-          onClick={this.handleDecreament}
+          onClick={this.handleDecrement}
         >
           <i className="fas fa-minus-square"></i>
         </button>
