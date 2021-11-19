@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./app.css";
 import Habits from "./components/habits";
 import Navbar from "./components/navbar";
 
@@ -14,24 +14,39 @@ class App extends Component {
   };
 
   handleIncreament = (habit) => {
-    console.log(`handleIncrement ${habit.name}`);
-    const habits = [...this.state.habits];
-    const index = habits.indexOf(habit);
-    habits[index].count++;
+    // console.log(`handleIncrement ${habit.name}`);
+    // const habits = [...this.state.habits];
+    // const index = habits.indexOf(habit);
+    // habits[index].count++;
+
+    // shallow comparison을 피하기 위한 방법 2.
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        return { ...habit, count: habit.count + 1 }; // deconstructing object. 새로운 오브젝트에 안의 내용을 하나씩 복사해서 넣어줌
+      }
+      return item;
+    });
     this.setState({ habits });
   };
 
   handleDecreament = (habit) => {
-    console.log(`handleDecrement ${habit.name}`);
-    const habits = [...this.state.habits];
-    const index = habits.indexOf(habit);
-    const count = habits[index].count - 1;
-    habits[index].count = count < 0 ? 0 : count;
+    // console.log(`handleDecrement ${habit.name}`);
+    // const habits = [...this.state.habits];
+    // const index = habits.indexOf(habit);
+    // const count = habits[index].count - 1;
+    // habits[index].count = count < 0 ? 0 : count;
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        const count = habit.count - 1;
+        return { ...habit, count: count < 0 ? 0 : count };
+      }
+      return item;
+    });
     this.setState({ habits });
   };
 
   handleDelete = (habit) => {
-    console.log(`handleDelete ${habit.name}`);
+    // console.log(`handleDelete ${habit.name}`);
     const habits = this.state.habits.filter((item) => item.id !== habit.id);
     this.setState({ habits });
   };
@@ -43,7 +58,9 @@ class App extends Component {
 
   handleReset = () => {
     const habits = this.state.habits.map((habit) => {
-      habit.count = 0;
+      if (habit.count !== 0) {
+        return { ...habit, count: 0 };
+      }
       return habit;
     });
     this.setState({ habits });
