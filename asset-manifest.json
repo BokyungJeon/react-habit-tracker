@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-habit-tracker/static/css/main.2f51684c.chunk.css",
-    "main.js": "/react-habit-tracker/static/js/main.a8133e79.chunk.js",
-    "main.js.map": "/react-habit-tracker/static/js/main.a8133e79.chunk.js.map",
+    "main.js": "/react-habit-tracker/static/js/main.650b4d3f.chunk.js",
+    "main.js.map": "/react-habit-tracker/static/js/main.650b4d3f.chunk.js.map",
     "runtime-main.js": "/react-habit-tracker/static/js/runtime-main.236d1839.js",
     "runtime-main.js.map": "/react-habit-tracker/static/js/runtime-main.236d1839.js.map",
     "static/js/2.276e65cb.chunk.js": "/react-habit-tracker/static/js/2.276e65cb.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.236d1839.js",
     "static/js/2.276e65cb.chunk.js",
     "static/css/main.2f51684c.chunk.css",
-    "static/js/main.a8133e79.chunk.js"
+    "static/js/main.650b4d3f.chunk.js"
   ]
 }
