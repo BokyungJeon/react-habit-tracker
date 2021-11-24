@@ -3,7 +3,7 @@
 // const habitAddForm = (props) => {};
 // function HabitAddForm(props) {} 처럼 할당안하고 순수함수로도 작성가능
 
-// PureComponent에서 function으로 바꿀 때는 memo를 사용
+// PureComponent를 function으로 바꿀 때는 memo를 사용
 import React, { memo } from "react";
 
 const HabitAddForm = memo((props) => {
