@@ -1,16 +1,16 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 
 // PureComponent도 Component를 상속하기 때문에 lifecycle함수를 사용할 수 있다.
-class Habit extends PureComponent {
+export default class Habit extends PureComponent {
   componentDidMount() {
     console.log(`habit: ${this.props.habit.name} mounted`);
-    // 타이머를 시작
+    // 타이머 시작
     // 실시간 채팅에서 소켓 초기화
   }
 
   componentWillUnmount() {
     console.log(`habit: ${this.props.habit.name} will unmount`);
-    // 타이머를 중지
+    // 타이머 중지
     // 정리하고 리소스 지우기
   }
 
@@ -27,7 +27,10 @@ class Habit extends PureComponent {
   };
 
   render() {
+    // console.log(this.props.habit);
+    // const habitName = this.props.habit.name;
     const { name, count } = this.props.habit;
+    // console.log(`habit: ${name}`);
     return (
       <li className="habit">
         <span className="habit-name">{name}</span>
@@ -54,5 +57,3 @@ class Habit extends PureComponent {
     );
   }
 }
-
-export default Habit;
