@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
-import Habit from './habit';
-import HabitAddForm from './habitAddForm';
+import Habit from '../habit/habit';
+import HabitAddForm from '../form/habitAddForm';
 
 class Habits extends Component {
-  // state = {
-  //     habits: [
-  //         { id: 1, name: 'Reading', count: 0 },
-  //         { id: 2, name: 'Running', count: 0 },
-  //         { id: 3, name: 'Coding', count: 0 },
-  //     ],
-  // };
-
   handleIncrement = (habit) => {
     this.props.onIncrement(habit);
   };
